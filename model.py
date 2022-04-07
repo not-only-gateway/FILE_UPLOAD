@@ -14,10 +14,10 @@ class Upload(db.Model):
     upload_date = db.Column(db.BigInteger(), nullable=False)
     type = db.Column(db.String(), nullable=False)
 
-    def __init__(self, file_name, secure_file_name, type):
+    def __init__(self, file_name, secure_file_name, content_type):
         self.secure_file_name = secure_file_name
         self.file_name = file_name
-        self.type = type
+        self.type = content_type
         self.upload_date = int(datetime.now().timestamp() * 1000)
 
     def __repr__(self):
